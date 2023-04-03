@@ -1,22 +1,40 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class AddressBook{
-    private ArrayList<Contact> contacts;
-    
-    public AddressBook(){
-        this.contacts = new ArrayList<Contact>();
+public class AddressBook {
+    private List<Contact> contacts;
+
+    public AddressBook() {
+        contacts = new ArrayList<>();
     }
 
-    public void addContact(Contact contact){
-        this.contacts.add(contact);
+    public void addContact(Contact contact) {
+        contacts.add(contact);
     }
 
-    public void removeContact(Contact contact){
-        this.contacts.remove(contact);
+    public void removeContact(Contact contact) {
+        contacts.remove(contact);
     }
-    public void displayContacts(){
-        for(Contact contact :this.contacts){
-            System.out.println(contact.toString());
+
+    public Contact findContactByName(String name) {
+        for (Contact contact : contacts) {
+            if (contact.getName().equalsIgnoreCase(name)) {
+                return contact;
+            }
         }
+        return null;
+    }
+
+    public Contact findContactByPhone(String phone) {
+        for (Contact contact : contacts) {
+            if (contact.getPhone().equals(phone)) {
+                return contact;
+            }
+        }
+        return null;
+    }
+
+    public List<Contact> getContacts() {
+        return contacts;
     }
 }

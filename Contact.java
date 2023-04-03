@@ -1,39 +1,35 @@
 public class Contact {
     private String name;
-    private String phoneNumber;
-    private String emailAddress;
+    private String address;
+    private String phone;
 
-    public Contact(String name, String phoneNumber, String emailAddress){
+    public Contact(String name, String address, String phone) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.emailAddress = emailAddress;
+        this.address = address;
+        this.phone = phone;
     }
 
-    public void setName(String name){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getName(){
-        return this.name;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPhoneNumber(){
-        return this.phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmailAddress(String emailAddress){
-        this.emailAddress = emailAddress;
-    }
-
-    public String getEmailAddress(){
-        return this.emailAddress;
-    }
-
-    public String toString(){
-        return this.name + " - " + this.phoneNumber + " - " + this.emailAddress;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
